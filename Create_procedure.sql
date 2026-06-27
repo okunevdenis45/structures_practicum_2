@@ -14,7 +14,6 @@ BEGIN
         END AS status_check
     FROM history_pass h
     JOIN passes p ON h.pass_id = p.pass_id
-    -- ИСПРАВЛЕНИЕ ЗДЕСЬ: используем реальное имя колонки из таблицы employees
     JOIN employees e ON p.employee_id = e.employee_id
     WHERE DATE(h.timestamp) = p_target_date
     ORDER BY h.timestamp ASC;
